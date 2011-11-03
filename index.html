@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<body>
+  <script>
+    var body = document.getElementsByTagName('body');
+    var releaseDate = new Date(2011, 10, 25, 15);
+    var currentDate = new Date;
+    if (releaseDate < currentDate){
+      body[0].innerHTML = 'Released';
+    }
+    else{
+      setInterval(function(){
+        var currentDate = new Date;
+        var leftTime = releaseDate - currentDate;
+        leftDay = Math.floor(leftTime / 86400000);
+        leftHour = Math.floor(leftTime % 86400000 / 3600000);
+        leftMin = Math.floor(leftTime % 86400000 % 3600000 / 60000);
+        leftSec = Math.floor(leftTime % 86400000 % 3600000 % 60000 / 1000);
+        body[0].innerHTML = leftDay + ' day(s) ' + leftHour + ':' + leftMin + ':' + leftSec;
+      }, 1000)
+    }
+  </script>
+</body>
