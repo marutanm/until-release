@@ -4,18 +4,26 @@
     var body = document.getElementsByTagName('body');
     var releaseDate = new Date(2011, 10, 25, 15);
     var currentDate = new Date;
-    if (releaseDate < currentDate){
+    if (releaseDate < currentDate) {
       body[0].innerHTML = 'Released';
     }
-    else{
+    else {
       setInterval(function(){
         var currentDate = new Date;
         var leftTime = releaseDate - currentDate;
-        leftDay = Math.floor(leftTime / 86400000);
-        leftHour = Math.floor(leftTime % 86400000 / 3600000);
-        leftMin = Math.floor(leftTime % 86400000 % 3600000 / 60000);
-        leftSec = Math.floor(leftTime % 86400000 % 3600000 % 60000 / 1000);
-        body[0].innerHTML = leftDay + ' day(s) ' + leftHour + ':' + leftMin + ':' + leftSec;
+        var leftDay = Math.floor(leftTime / 86400000);
+        var leftHour = Math.floor(leftTime % 86400000 / 3600000);
+        var leftMin = Math.floor(leftTime % 86400000 % 3600000 / 60000);
+        var leftSec = Math.floor(leftTime % 86400000 % 3600000 % 60000 / 1000);
+        var withZero = function(t){
+          if (t < 10) {
+            return '0' + t
+          }
+          else {
+            return t
+          }
+        }
+        body[0].innerHTML = leftDay + ' day' + (function(a){if (a > 1){return 's '}else{return ' '}})(leftDay) + withZero(leftHour) + ':' + withZero(leftMin) + ':' + withZero(leftSec);
       }, 1000)
     }
   </script>
