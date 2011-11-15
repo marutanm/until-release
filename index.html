@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <head>
-  <meta name = "viewport" content = "width = 150">
+  <meta name = "viewport" content = "width = 250">
   <title>Until Release</title>
 </head>
 <body>
-  <div id="timer"></div>
+  <h1 id="timer"></h1>
   <script>
     var body = document.getElementsByTagName('body');
     var releaseDate = new Date(2011, 10, 25, 15);
@@ -26,7 +26,10 @@
     }
   </script>
 
-  <div id="recentcomments" class="dsq-widget"><h2 class="dsq-widget-title">Recent Comments</h2><script type="text/javascript" src="http://until-release.disqus.com/recent_comments_widget.js?num_items=20&hide_avatars=0&avatar_size=32&excerpt_length=200"></script></div><a href="http://disqus.com/">Powered by Disqus</a>
+  <div id="recentcomments" class="dsq-widget" style="padding-top: 300px">
+    <h4 class="dsq-widget-title">Recent Comments</h4>
+    <script type="text/javascript" src="http://until-release.disqus.com/recent_comments_widget.js?num_items=20&hide_avatars=0&avatar_size=32&excerpt_length=200"></script>
+  </div>
 
   <div id="disqus_thread"></div>
   <script type="text/javascript">
@@ -39,6 +42,6 @@
    })();
  </script>
  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
- <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
+ <a href="http://disqus.com" class="dsq-brlink">Powered by <span class="logo-disqus">Disqus</span></a>
+ <script>document.getElementById('dsq-pagination').style.dispay = none;</script>
 </body>
